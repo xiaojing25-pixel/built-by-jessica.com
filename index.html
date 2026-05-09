@@ -663,6 +663,41 @@
     font-weight: 500;
   }
 
+  .faq {
+    padding: 100px 24px 60px;
+    max-width: 920px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .faq-item {
+    padding: 28px 0;
+    border-top: 1px solid var(--line-strong);
+  }
+  .faq-item:last-child {
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .faq-q {
+    font-family: 'Fraunces', serif;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 12px;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .faq-a {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 720px;
+  }
+
   .form-section {
     padding: 100px 24px 80px;
     max-width: 920px;
@@ -814,6 +849,10 @@
     .step { padding-top: 24px; border-top: 1px solid var(--line-strong); }
     .step .step-num { font-size: 56px; margin-bottom: 14px; }
     .pricing { padding: 60px 16px; }
+    .faq { padding: 60px 16px 32px; }
+    .faq-item { padding: 22px 0; }
+    .faq-q { font-size: 19px; margin-bottom: 10px; }
+    .faq-a { font-size: 14px; line-height: 1.65; }
     .form-section { padding: 64px 16px 32px; }
     .form { padding: 22px; border-radius: 18px; }
     .form-row { grid-template-columns: 1fr; }
@@ -844,6 +883,7 @@
     <a href="#work">Work</a>
     <a href="#process">Process</a>
     <a href="#pricing">Pricing</a>
+    <a href="#faq">Questions</a>
     <a href="#start" class="cta">Start a project</a>
   </div>
 </nav>
@@ -1044,6 +1084,47 @@
   </div>
 </section>
 
+<section class="faq" id="faq">
+  <div class="section-head">
+    <span class="label">Common questions</span>
+    <h2>Asked &amp; <span class="editorial-word">answered.</span></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h3 class="faq-q">Who owns the domain name?</h3>
+      <p class="faq-a">Up to you. If you'd rather buy and own it directly, I'll point you to a registrar — it costs about $12–15/year and takes five minutes. Or I can purchase it for you and transfer it to your name at launch. Either way, the domain belongs to you.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Where will my site be hosted?</h3>
+      <p class="faq-a">For most small-business sites, I host on a fast, free platform like GitHub Pages or Cloudflare Pages — no monthly fees, automatic HTTPS, and a global CDN so it loads quickly anywhere. If your site needs server-side features (custom booking, an inventory-backed shop), I'll recommend hosting that fits — typically $5–15/month.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">How are you so fast?</h3>
+      <p class="faq-a">AI tooling has changed development. Work that used to be weeks of boilerplate happens in hours now, which lets me spend my time on the design, copy, and details that actually matter for your shop. Faster turnaround, no shortcuts on craft.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">What if I have my own design or designer?</h3>
+      <p class="faq-a">Bring it on. If you've got a design, mood board, or even a Figma file, I'll build it faithfully. I'll flag anything that needs adjusting for the web — responsiveness, accessibility — but the vision stays yours.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">What about copy? Do I need to write everything?</h3>
+      <p class="faq-a">Either works. You can supply your own copy, or tell me what you want to express and I'll help shape it. For small shops, the best copy comes from how you actually talk about your business — so we'll always work from your voice, not generic filler.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Can you come take photos for our shop?</h3>
+      <p class="faq-a">Absolutely. On-site photography is an add-on, priced based on travel distance and the kind of shoot we need. I'll quote it separately during the consult so there are no surprises.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Do you build personal sites or portfolios too?</h3>
+      <p class="faq-a">Yes. The same care and craft applies — writers, photographers, freelancers, anyone who needs a place online that feels like them and not a template.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Can you handle automation — order processing, inventory, internal tools?</h3>
+      <p class="faq-a">Possibly. These projects are scoped individually. Reach out and let's talk through what you need; I'll tell you honestly whether I can help or whether I should refer you to someone better suited.</p>
+    </div>
+  </div>
+</section>
+
 <section class="form-section" id="start">
   <div class="form-head">
     <span class="label">Start a project</span>
@@ -1143,6 +1224,7 @@
         <a href="#work">Work</a>
         <a href="#process">Process</a>
         <a href="#pricing">Pricing</a>
+        <a href="#faq">Questions</a>
       </div>
       <div class="footer-col">
         <span class="label">Office</span>
