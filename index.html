@@ -299,7 +299,7 @@
   .sticker.midnight { background: var(--midnight); color: white; border-color: var(--midnight-deep); }
   .sticker-1 { top: -10px; right: 20%; transform: rotate(-6deg); }
   .sticker-2 { top: 38%; right: -14px; transform: rotate(4deg); z-index: 6; }
-  .sticker-3 { bottom: 8%; right: 8%; transform: rotate(-3deg); z-index: 6; }
+  .sticker-3 { top: 50%; right: 4%; transform: rotate(-3deg); z-index: 6; }
 
   .stat-strip {
     max-width: 1280px;
@@ -524,44 +524,69 @@
     position: relative;
     z-index: 2;
   }
+  .process-wave {
+    width: 100%;
+    height: 70px;
+    display: block;
+    margin: 8px 0 36px;
+    overflow: visible;
+  }
+  .process-wave path {
+    stroke: var(--accent);
+    stroke-width: 1.5;
+    fill: none;
+    stroke-dasharray: 4 9;
+    stroke-linecap: round;
+    opacity: 0.55;
+  }
+  .process-wave circle {
+    fill: var(--accent);
+    stroke: var(--paper);
+    stroke-width: 4;
+  }
   .process-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-  }
-  .step {
-    padding: 26px 22px 28px;
-    background: var(--paper-light);
-    border-radius: 18px;
-    border: 1px solid var(--line);
-    box-shadow: var(--shadow-soft);
-    transition: all 0.25s;
+    gap: 36px;
     position: relative;
   }
-  .step:hover { transform: translateY(-5px); box-shadow: var(--shadow-pop); }
+  .step {
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    transition: none;
+    position: relative;
+  }
+  .step:hover { transform: none; box-shadow: none; }
   .step .step-num {
-    width: 36px; height: 36px;
-    background: var(--accent);
-    color: white;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
+    width: auto; height: auto;
+    background: none;
+    color: var(--accent);
+    border-radius: 0;
+    display: block;
     font-family: 'Fraunces', serif;
     font-style: italic;
-    font-size: 18px;
-    margin-bottom: 18px;
-    box-shadow: var(--shadow-soft);
+    font-size: 76px;
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    margin-bottom: 22px;
+    box-shadow: none;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
   }
   .step h4 {
     font-family: 'Fraunces', serif;
-    font-size: 19px;
+    font-size: 24px;
     line-height: 1.15;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     font-weight: 500;
     letter-spacing: -0.015em;
     color: var(--ink);
     font-variation-settings: "opsz" 144, "SOFT" 30;
   }
-  .step p { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
+  .step p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
 
   .pricing {
     padding: 90px 24px;
@@ -784,7 +809,10 @@
     .services { padding: 64px 16px 40px; }
     .audience { padding: 60px 16px; }
     .process { padding: 64px 16px; }
-    .process-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr; gap: 32px; }
+    .process-wave { display: none; }
+    .step { padding-top: 24px; border-top: 1px solid var(--line-strong); }
+    .step .step-num { font-size: 56px; margin-bottom: 14px; }
     .pricing { padding: 60px 16px; }
     .form-section { padding: 64px 16px 32px; }
     .form { padding: 22px; border-radius: 18px; }
@@ -949,6 +977,13 @@
     <span class="label">How it works</span>
     <h2>Simple, <span class="editorial-word">no</span> surprises.</h2>
   </div>
+  <svg class="process-wave" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M 0 35 Q 75 5, 150 35 T 300 35 T 450 35 T 600 35 T 750 35 T 900 35 T 1050 35 T 1200 35" />
+    <circle cx="150" cy="35" r="6" />
+    <circle cx="450" cy="35" r="6" />
+    <circle cx="750" cy="35" r="6" />
+    <circle cx="1050" cy="35" r="6" />
+  </svg>
   <div class="process-grid">
     <div class="step">
       <div class="step-num">i</div>
