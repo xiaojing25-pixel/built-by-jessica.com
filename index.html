@@ -524,6 +524,103 @@
     position: relative;
     z-index: 2;
   }
+  .about {
+    padding: 100px 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .about-bio .label { color: var(--accent); margin-bottom: 18px; display: inline-block; }
+  .about-bio h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(34px, 4.6vw, 60px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    font-weight: 400;
+    margin-bottom: 32px;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .about-bio h2 .editorial-word {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  .bio-body p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    max-width: 580px;
+  }
+  .bio-body p:last-child { margin-bottom: 0; }
+  .bio-body strong { color: var(--ink); font-weight: 600; }
+  .about-card {
+    background: var(--paper-light);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 30px 32px;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .about-stat {
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .about-stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .about-stat-num .editorial { font-style: italic; font-weight: 400; }
+  .about-stat-label { font-size: 13px; color: var(--ink-mute); line-height: 1.5; }
+  .about-section .label { display: block; margin-bottom: 12px; color: var(--ink-mute); }
+  .about-companies, .about-specialties {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .about-companies li {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .about-specialties li { font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+  .about-contact { padding-top: 22px; border-top: 1px solid var(--line); }
+  .about-contact .label { display: block; margin-bottom: 10px; color: var(--ink-mute); }
+  .about-contact a {
+    display: block;
+    color: var(--accent);
+    text-decoration: none;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 6px;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .about-contact a:hover { color: var(--accent-deep); }
+  .about-loc { font-size: 13px; color: var(--ink-mute); }
+
   .process-wave {
     width: 100%;
     height: 70px;
@@ -833,6 +930,7 @@
     .services-grid { grid-template-columns: 1fr; }
     .process-grid { grid-template-columns: 1fr 1fr; }
     .pricing-inner { grid-template-columns: 1fr; gap: 32px; }
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
     .footer-cols { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 600px) {
@@ -843,6 +941,10 @@
     .stat-strip { grid-template-columns: 1fr 1fr; padding: 0 16px; gap: 10px; }
     .services { padding: 64px 16px 40px; }
     .audience { padding: 60px 16px; }
+    .about { padding: 64px 16px; }
+    .about-card { padding: 22px 24px; }
+    .about-stat-num { font-size: 44px; }
+    .bio-body p { font-size: 15px; }
     .process { padding: 64px 16px; }
     .process-grid { grid-template-columns: 1fr; gap: 32px; }
     .process-wave { display: none; }
@@ -881,6 +983,7 @@
   </div>
   <div class="links">
     <a href="#work">Work</a>
+    <a href="#about">About</a>
     <a href="#process">Process</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">Questions</a>
@@ -1009,6 +1112,49 @@
       <span class="audience-pill">Tattoo shops</span>
       <span class="audience-pill">Anything else, ask</span>
     </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-bio">
+      <span class="label">About</span>
+      <h2>Hi, I'm <span class="editorial-word">Jessica.</span></h2>
+      <div class="bio-body">
+        <p>I've spent <strong>18+ years</strong> building software — from enterprise web applications used by thousands of people daily, to consumer products with millions of users. Along the way, I've worked with companies like <strong>DirecTV</strong>, <strong>Salesforce</strong>, and <strong>Corel</strong>, where I learned that great software doesn't start with code — it starts with deeply understanding the people who'll actually use it.</p>
+        <p>That training stuck. When I sit down with a yoga studio owner or a café manager, I bring the same approach I'd use for an enterprise client: thoughtful needs and requirements gathering, real process analysis, and an honest read on what your customers actually need from your site.</p>
+        <p>I weave that empathy into every design decision — alongside the technical fluency to make it work on every phone, in every browser, for every visitor (yes, including the ones using a screen reader). The result is a site that works as hard as you do, without the templated feel or the technical cruft.</p>
+      </div>
+    </div>
+    <aside class="about-card">
+      <div class="about-stat">
+        <div class="about-stat-num">18<span class="editorial">+</span></div>
+        <div class="about-stat-label">Years building enterprise &amp; consumer software</div>
+      </div>
+      <div class="about-section">
+        <span class="label">Companies I've worked with</span>
+        <ul class="about-companies">
+          <li>DirecTV</li>
+          <li>Salesforce</li>
+          <li>Corel</li>
+        </ul>
+      </div>
+      <div class="about-section">
+        <span class="label">Specialties</span>
+        <ul class="about-specialties">
+          <li>Mobile-first design</li>
+          <li>Accessibility (WCAG)</li>
+          <li>Process analysis</li>
+          <li>Requirements gathering</li>
+          <li>End-user empathy</li>
+        </ul>
+      </div>
+      <div class="about-contact">
+        <span class="label">Get in touch</span>
+        <a href="mailto:hi@builtbyjessica.com">hi@builtbyjessica.com</a>
+        <span class="about-loc">Los Angeles, CA</span>
+      </div>
+    </aside>
   </div>
 </section>
 
@@ -1242,6 +1388,7 @@
       <div class="footer-col">
         <span class="label">Site</span>
         <a href="#work">Work</a>
+        <a href="#about">About</a>
         <a href="#process">Process</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">Questions</a>
