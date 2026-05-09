@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Built by Jessica — beautiful websites for small shops</title>
+<meta name="description" content="Custom-designed, fairly priced websites for restaurants, salons, yoga studios, and the small shops that pour real care into their work. Most projects start at $500.">
+<meta name="theme-color" content="#F4ECD8">
+<link rel="canonical" href="https://builtbyjessica.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://builtbyjessica.com/">
+<meta property="og:title" content="Built by Jessica — beautiful websites for small shops">
+<meta property="og:description" content="Custom-designed websites for restaurants, salons, yoga studios, and the small shops that pour real care into their work.">
+<meta property="og:image" content="https://builtbyjessica.com/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Built by Jessica — beautiful websites for small shops">
+<meta name="twitter:description" content="Custom-designed websites for restaurants, salons, yoga studios, and the small shops that pour real care into their work.">
+<meta name="twitter:image" content="https://builtbyjessica.com/assets/og-image.jpg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* WARM BUTTER & PLUM — soft golden cream with deep plum darks and forest accent */
+    --paper: #F4ECD8;          /* warm pale butter cream */
+    --paper-warm: #E8DEC4;     /* slightly deeper butter */
+    --paper-light: #FBF5E5;    /* near-white card surface w/ warm yellow undertone */
+    --accent: #2F5236;         /* forest green */
+    --accent-deep: #1B3520;
+    --accent-soft: #7FA088;
+    --midnight: #2D1F2E;       /* deep plum-aubergine */
+    --midnight-deep: #1A1019;
+    --slate-mid: #5C4858;
+    --ink: #1F1A1F;            /* near-black with cool undertone */
+    --ink-soft: #3D3540;
+    --ink-mute: #857A82;
+    --line: rgba(31, 26, 31, 0.10);
+    --line-strong: rgba(31, 26, 31, 0.20);
+
+    --shadow-soft:
+      0 1px 2px rgba(31, 26, 31, 0.05),
+      0 2px 6px rgba(31, 26, 31, 0.06),
+      0 8px 24px rgba(31, 26, 31, 0.06);
+    --shadow-lift:
+      0 1px 2px rgba(31, 26, 31, 0.06),
+      0 4px 12px rgba(31, 26, 31, 0.09),
+      0 16px 40px rgba(31, 26, 31, 0.10),
+      0 32px 80px rgba(31, 26, 31, 0.08);
+    --shadow-pop:
+      0 2px 4px rgba(31, 26, 31, 0.08),
+      0 8px 24px rgba(31, 26, 31, 0.12),
+      0 24px 60px rgba(31, 26, 31, 0.16);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter Tight', -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--accent); color: white; }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: radial-gradient(rgba(42, 31, 29, 0.04) 1px, transparent 1px);
+    background-size: 3px 3px;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  /* decorative floating background shapes — fixed so they parallax with scroll */
+  .bg-shapes {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .bg-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+  }
+  .bg-blob-1 {
+    width: 520px; height: 520px;
+    top: -140px; right: -180px;
+    background: var(--accent);
+    opacity: 0.18;
+  }
+  .bg-blob-2 {
+    width: 380px; height: 380px;
+    top: 35%; left: -160px;
+    background: #C26D3A;
+    opacity: 0.14;
+  }
+  .bg-blob-3 {
+    width: 440px; height: 440px;
+    bottom: 15%; right: -120px;
+    background: var(--midnight);
+    opacity: 0.10;
+  }
+  .bg-blob-4 {
+    width: 300px; height: 300px;
+    top: 70%; left: 30%;
+    background: var(--accent-soft);
+    opacity: 0.12;
+  }
+
+  /* subtle grid pattern */
+  .bg-grid {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      linear-gradient(rgba(31, 26, 31, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31, 26, 31, 0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  /* Display font — Fraunces with subtle character */
+  .display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .label { font-family: 'Inter Tight', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-mute); }
+  .editorial { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(244, 236, 216, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .logo {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'Fraunces', serif;
+    font-size: 22px; font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  nav .logo svg { color: var(--accent); }
+  nav .links { display: flex; gap: 28px; align-items: center; }
+  nav .links a {
+    color: var(--ink); text-decoration: none;
+    font-size: 13.5px; font-weight: 400;
+  }
+  nav .links a:hover { color: var(--accent); }
+  nav .cta {
+    background: var(--accent); color: #FFFFFF;
+    padding: 9px 16px;
+    border-radius: 100px;
+    font-size: 13px; font-weight: 500;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  nav .cta:hover { background: var(--accent-deep); color: #FFFFFF; transform: translateY(-1px); box-shadow: var(--shadow-lift); }
+
+  .hero {
+    padding: 130px 24px 56px;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(36px, 4.4vw, 58px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+    margin-bottom: 22px;
+    color: var(--ink);
+  }
+  .hero h1 .accent-color {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 600;
+  }
+  .hero h1 .editorial-word {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--midnight);
+  }
+  .hero h1 .outline-word {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--ink);
+    font-weight: 700;
+  }
+
+  .hero p.subhead {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 26px;
+    max-width: 460px;
+  }
+  .hero-cta { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 22px;
+    border-radius: 100px;
+    font-size: 14px; font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter Tight', sans-serif;
+    box-shadow: var(--shadow-soft);
+  }
+  .btn-primary { background: var(--ink); color: white; }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+  .btn-secondary { background: var(--paper-light); color: var(--ink); border: 1px solid var(--line); }
+  .btn-secondary:hover { background: white; transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+
+  .hero-collage {
+    position: relative;
+    height: 620px;
+    width: 100%;
+  }
+  .collage-card {
+    position: absolute;
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--paper-light);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-pop);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .collage-1 {
+    width: 70%; height: 56%;
+    top: 0; right: 0;
+    transform: rotate(2.5deg);
+    z-index: 3;
+    background-image: url('assets/hero-collage-1.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .collage-1:hover { transform: rotate(2.5deg) translateY(-4px) scale(1.02); }
+  .collage-2 {
+    width: 60%; height: 48%;
+    bottom: 18%; left: -10%;
+    transform: rotate(-3deg);
+    z-index: 4;
+    background-image: url('assets/hero-collage-2.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .collage-2:hover { transform: rotate(-3deg) translateY(-4px) scale(1.02); }
+  .collage-3 {
+    width: 42%; height: 36%;
+    top: 4%; left: 0;
+    transform: rotate(-2deg);
+    z-index: 2;
+    background-image: url('assets/hero-collage-3.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .collage-3:hover { transform: rotate(-2deg) translateY(-4px) scale(1.02); }
+
+  .sticker {
+    position: absolute;
+    background: var(--paper-light);
+    padding: 8px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: var(--shadow-pop);
+    z-index: 5;
+    border: 1px solid var(--line);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ink);
+    font-family: 'Inter Tight', sans-serif;
+  }
+  .sticker.accent-bg { background: var(--accent); color: white; border-color: var(--accent-deep); }
+  .sticker.midnight { background: var(--midnight); color: white; border-color: var(--midnight-deep); }
+  .sticker-1 { top: -10px; right: 20%; transform: rotate(-6deg); }
+  .sticker-2 { top: 38%; right: -14px; transform: rotate(4deg); z-index: 6; }
+  .sticker-3 { bottom: 8%; right: 8%; transform: rotate(-3deg); z-index: 6; }
+
+  .stat-strip {
+    max-width: 1280px;
+    margin: 64px auto 0;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .stat-card {
+    background: var(--paper-light);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px 22px;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.25s;
+  }
+  .stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+  .stat-card .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .stat-card .stat-num .accent-color { color: var(--accent); }
+  .stat-card .stat-num .editorial { font-style: italic; color: var(--accent); font-weight: 400; }
+  .stat-card .stat-desc { font-size: 12.5px; color: var(--ink-mute); line-height: 1.45; }
+
+  .marquee {
+    margin: 80px -2vw 0;
+    padding: 18px 0;
+    background: var(--midnight);
+    color: white;
+    overflow: hidden;
+    transform: rotate(-1deg);
+    box-shadow: var(--shadow-lift);
+    border-top: 1px solid var(--midnight-deep);
+    border-bottom: 1px solid var(--midnight-deep);
+    position: relative;
+    z-index: 5;
+  }
+  .marquee-track {
+    display: inline-flex;
+    gap: 32px;
+    animation: scroll 50s linear infinite;
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 500;
+    white-space: nowrap;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .marquee-track .editorial { font-style: italic; font-weight: 400; color: var(--accent-soft); }
+  .marquee-track .star { color: var(--accent-soft); font-style: normal; }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .services {
+    padding: 100px 24px 60px;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .section-head { margin-bottom: 48px; max-width: 800px; }
+  .section-head .label {
+    color: var(--accent);
+    margin-bottom: 18px;
+    display: inline-block;
+  }
+  .section-head h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(34px, 4.6vw, 60px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    font-weight: 400;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .section-head h2 .editorial-word {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  .section-head h2 .midnight-color { color: var(--midnight); }
+
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .service {
+    background: var(--paper-light);
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .service:hover { transform: translateY(-6px); box-shadow: var(--shadow-pop); }
+  .service-photo {
+    aspect-ratio: 4/3;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--paper-warm);
+    position: relative;
+  }
+  .service-photo .service-num {
+    position: absolute;
+    top: 16px; left: 18px;
+    background: var(--paper-light);
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--line);
+    color: var(--ink);
+  }
+  .service-photo .price-pill {
+    position: absolute;
+    top: 16px; right: 18px;
+    background: var(--ink);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    box-shadow: var(--shadow-soft);
+  }
+  /* Service photos: 01 laptop, 02 cafe interior, 03 desk */
+  .s1-photo { background-image: url('assets/service-laptop.jpg'); }
+  .s2-photo { background-image: url('assets/service-cafe.jpg'); }
+  .s3-photo { background-image: url('assets/service-desk.jpg'); }
+
+  .service-body { padding: 22px 24px 26px; }
+  .service-body h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .service-body p { color: var(--ink-soft); font-size: 13.5px; line-height: 1.55; }
+
+  .audience {
+    padding: 80px 24px;
+    background: var(--midnight);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .audience::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 280px; height: 280px;
+    background: var(--accent);
+    border-radius: 50%;
+    opacity: 0.30;
+    filter: blur(2px);
+  }
+  .audience::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -60px;
+    width: 200px; height: 200px;
+    background: var(--paper);
+    border-radius: 50%;
+    opacity: 0.10;
+    filter: blur(2px);
+  }
+  .audience-inner { max-width: 1280px; margin: 0 auto; position: relative; }
+  .audience .label { color: var(--accent-soft); margin-bottom: 18px; display: inline-block; }
+  .audience h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(34px, 4.4vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    margin-bottom: 48px;
+    max-width: 760px;
+    color: white;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .audience h2 .accent-light { color: var(--accent-soft); }
+  .audience h2 .editorial-word { font-style: italic; font-weight: 400; color: var(--paper); }
+
+  .audience-pills {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .audience-pill {
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.2s;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    color: white;
+    font-variation-settings: "opsz" 14, "SOFT" 30;
+  }
+  .audience-pill:hover { background: var(--accent); border-color: var(--accent-deep); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.30); }
+  .audience-pill:nth-child(3n) { background: rgba(47, 82, 54, 0.25); border-color: rgba(127, 160, 136, 0.35); }
+
+  .process {
+    padding: 100px 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .step {
+    padding: 26px 22px 28px;
+    background: var(--paper-light);
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.25s;
+    position: relative;
+  }
+  .step:hover { transform: translateY(-5px); box-shadow: var(--shadow-pop); }
+  .step .step-num {
+    width: 36px; height: 36px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow-soft);
+  }
+  .step h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .step p { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
+
+  .pricing {
+    padding: 90px 24px;
+    background: var(--paper-warm);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    z-index: 2;
+  }
+  .pricing-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .pricing-left { padding-top: 8px; }
+  .pricing-left .label { display: inline-block; margin-bottom: 18px; color: var(--accent); }
+  .pricing-left h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(34px, 4.6vw, 60px);
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    margin-bottom: 18px;
+    font-weight: 400;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .pricing-left h2 .editorial-word { font-style: italic; font-weight: 400; color: var(--accent); }
+  .pricing-left p { font-size: 15px; color: var(--ink-soft); line-height: 1.55; max-width: 380px; }
+
+  .pricing-tiers { display: flex; flex-direction: column; gap: 12px; }
+  .tier {
+    padding: 22px 26px;
+    background: var(--paper-light);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 18px;
+    align-items: center;
+    transition: all 0.25s;
+    box-shadow: var(--shadow-soft);
+  }
+  .tier:hover { transform: translateY(-3px) translateX(4px); box-shadow: var(--shadow-pop); border-color: var(--accent-soft); }
+  .tier-icon {
+    width: 48px; height: 48px;
+    background-size: cover; background-position: center;
+    background-color: var(--paper-warm);
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--line);
+  }
+  .tier-1 .tier-icon { background-image: url('assets/service-laptop.jpg'); }
+  .tier-2 .tier-icon { background-image: url('assets/service-cafe.jpg'); }
+  .tier-3 .tier-icon { background-image: url('assets/service-desk.jpg'); }
+  .tier-content strong {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 3px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .tier-content p { font-size: 12.5px; color: var(--ink-mute); line-height: 1.45; }
+  .tier-price {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .form-section {
+    padding: 100px 24px 80px;
+    max-width: 920px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .form-head { text-align: center; margin-bottom: 40px; }
+  .form-head .label { color: var(--accent); display: inline-block; margin-bottom: 16px; }
+  .form-head h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(38px, 5.2vw, 68px);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    margin-bottom: 14px;
+    font-weight: 400;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .form-head h2 .editorial-word { font-style: italic; font-weight: 400; color: var(--accent); }
+  .form-head p { font-size: 15.5px; color: var(--ink-soft); max-width: 500px; margin: 12px auto 0; line-height: 1.55; }
+
+  .form {
+    background: var(--paper-light);
+    padding: 36px;
+    border-radius: 24px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow-pop);
+    display: grid;
+    gap: 20px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field { display: flex; flex-direction: column; }
+  .field label, .field .label-text {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 7px;
+  }
+  .field input, .field select, .field textarea {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 15px;
+    background: white;
+    border: 1px solid var(--line);
+    padding: 12px 14px;
+    color: var(--ink);
+    border-radius: 10px;
+    transition: all 0.2s;
+    outline: none;
+    width: 100%;
+    box-shadow: inset 0 1px 2px rgba(42, 31, 29, 0.04);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(47, 82, 54, 0.15), inset 0 1px 2px rgba(42, 31, 29, 0.04);
+  }
+  .field textarea { min-height: 110px; resize: vertical; line-height: 1.5; }
+
+  .field-radios { display: flex; gap: 6px; flex-wrap: wrap; }
+  .radio-pill {
+    padding: 10px 16px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    font-size: 13.5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--ink);
+    font-family: 'Inter Tight', sans-serif;
+    box-shadow: 0 1px 2px rgba(42, 31, 29, 0.04);
+  }
+  .radio-pill:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .radio-pill.active { background: var(--accent); color: white; border-color: var(--accent-deep); box-shadow: var(--shadow-soft); }
+
+  .form-submit {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    margin-top: 6px;
+  }
+  .form-submit small { color: var(--ink-mute); font-size: 12.5px; max-width: 340px; line-height: 1.5; }
+  .form-submit .btn-primary { padding: 14px 24px; }
+
+  footer {
+    background: var(--midnight);
+    color: white;
+    padding: 64px 24px 28px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 2;
+  }
+  .footer-inner { max-width: 1280px; margin: 0 auto; }
+  .footer-display {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(44px, 6.5vw, 88px);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    font-weight: 400;
+    margin-bottom: 56px;
+    max-width: 700px;
+    color: white;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .footer-display .accent-color { color: var(--accent-soft); }
+  .footer-display .editorial-word { font-style: italic; font-weight: 400; color: var(--paper); }
+  .footer-cols {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 28px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin-bottom: 48px;
+  }
+  .footer-col .label { color: var(--accent-soft); margin-bottom: 14px; display: block; }
+  .footer-col a { display: block; color: white; text-decoration: none; padding: 4px 0; font-size: 14px; opacity: 0.85; }
+  .footer-col a:hover { opacity: 1; color: var(--accent-soft); }
+  .footer-bottom {
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-collage { height: 460px; }
+    .stat-strip { grid-template-columns: 1fr 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .pricing-inner { grid-template-columns: 1fr; gap: 32px; }
+    .footer-cols { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    nav .links a:not(.cta) { display: none; }
+    .hero { padding: 100px 16px 32px; }
+    .hero-collage { height: 380px; }
+    .marquee-track { font-size: 18px; gap: 24px; }
+    .stat-strip { grid-template-columns: 1fr 1fr; padding: 0 16px; gap: 10px; }
+    .services { padding: 64px 16px 40px; }
+    .audience { padding: 60px 16px; }
+    .process { padding: 64px 16px; }
+    .process-grid { grid-template-columns: 1fr; }
+    .pricing { padding: 60px 16px; }
+    .form-section { padding: 64px 16px 32px; }
+    .form { padding: 22px; border-radius: 18px; }
+    .form-row { grid-template-columns: 1fr; }
+    .form-submit { flex-direction: column; gap: 14px; align-items: flex-start; }
+    .tier { grid-template-columns: auto 1fr; gap: 14px; }
+    .tier-price { grid-column: 1 / -1; padding-left: 64px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-shapes">
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+  <div class="bg-blob bg-blob-3"></div>
+  <div class="bg-blob bg-blob-4"></div>
+</div>
+
+<nav>
+  <div class="logo">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M2 14 Q 5 8, 8 12 T 14 10 T 18 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+    Built by Jessica
+  </div>
+  <div class="links">
+    <a href="#work">Work</a>
+    <a href="#process">Process</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#start" class="cta">Start a project</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <h1>Beautiful websites for the <span class="accent-color">small shops</span> <span class="editorial-word">that make</span> a neighborhood home.</h1>
+      <p class="subhead">Custom-designed, fairly priced websites for restaurants, salons, yoga studios, and the small shops that pour real care into their work.</p>
+      <div class="hero-cta">
+        <a href="#start" class="btn btn-primary">Start a project →</a>
+        <a href="#start" class="btn btn-secondary">Free consultation</a>
+      </div>
+    </div>
+    <div class="hero-collage">
+      <span class="sticker sticker-1 accent-bg">★ From $500</span>
+      <span class="sticker sticker-2">Free consult</span>
+      <span class="sticker sticker-3 midnight">✦ Custom built</span>
+      <div class="collage-card collage-3"></div>
+      <div class="collage-card collage-1"></div>
+      <div class="collage-card collage-2"></div>
+    </div>
+  </div>
+</section>
+
+<div class="stat-strip">
+  <div class="stat-card">
+    <div class="stat-num"><span class="accent-color">$500</span>+</div>
+    <div class="stat-desc">Most projects start here. Every quote is custom.</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">2–4 <span class="editorial">wks</span></div>
+    <div class="stat-desc">Typical timeline from kickoff to live.</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">100<span class="accent-color">%</span></div>
+    <div class="stat-desc">Custom-designed. No templates, no compromises.</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">1 <span class="editorial">person</span></div>
+    <div class="stat-desc">You talk to me from start to finish. No handoffs.</div>
+  </div>
+</div>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Restaurants</span><span class="star">✦</span>
+    <span class="editorial">Salons</span><span class="star">✦</span>
+    <span>Yoga studios</span><span class="star">✦</span>
+    <span class="editorial">Cafés</span><span class="star">✦</span>
+    <span>Massage</span><span class="star">✦</span>
+    <span class="editorial">Boutiques</span><span class="star">✦</span>
+    <span>Gyms</span><span class="star">✦</span>
+    <span class="editorial">Florists</span><span class="star">✦</span>
+    <span>Bakeries</span><span class="star">✦</span>
+    <span class="editorial">Tattoo shops</span><span class="star">✦</span>
+    <span>Restaurants</span><span class="star">✦</span>
+    <span class="editorial">Salons</span><span class="star">✦</span>
+    <span>Yoga studios</span><span class="star">✦</span>
+    <span class="editorial">Cafés</span><span class="star">✦</span>
+    <span>Massage</span><span class="star">✦</span>
+    <span class="editorial">Boutiques</span><span class="star">✦</span>
+    <span>Gyms</span><span class="star">✦</span>
+    <span class="editorial">Florists</span><span class="star">✦</span>
+    <span>Bakeries</span><span class="star">✦</span>
+    <span class="editorial">Tattoo shops</span><span class="star">✦</span>
+  </div>
+</div>
+
+<section class="services" id="work">
+  <div class="section-head">
+    <span class="label">What I build</span>
+    <h2>Three ways I can <span class="editorial-word">help</span> <span class="midnight-color">you.</span></h2>
+  </div>
+  <div class="services-grid">
+    <div class="service">
+      <div class="service-photo s1-photo">
+        <span class="service-num">01</span>
+      </div>
+      <div class="service-body">
+        <h3>Brand new website</h3>
+        <p>Starting from scratch. We figure out what you need, design it together, and launch something you're genuinely proud to share.</p>
+      </div>
+    </div>
+    <div class="service">
+      <div class="service-photo s2-photo">
+        <span class="service-num">02</span>
+      </div>
+      <div class="service-body">
+        <h3>Redesign &amp; refresh</h3>
+        <p>Got a site stuck in 2014? I'll bring it into now without losing what's already working — and what your loyal customers love.</p>
+      </div>
+    </div>
+    <div class="service">
+      <div class="service-photo s3-photo">
+        <span class="service-num">03</span>
+      </div>
+      <div class="service-body">
+        <h3>Expand what you have</h3>
+        <p>Add online booking, a menu, a gallery, or a small shop. New features built into your existing site without a full rebuild.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="audience">
+  <div class="audience-inner">
+    <span class="label">Who I work with</span>
+    <h2>For the <span class="accent-light">small</span>, the <span class="editorial-word">local</span>, and the lovingly made.</h2>
+    <div class="audience-pills">
+      <span class="audience-pill">Restaurants</span>
+      <span class="audience-pill">Cafés</span>
+      <span class="audience-pill">Yoga studios</span>
+      <span class="audience-pill">Pilates &amp; barre</span>
+      <span class="audience-pill">Salons</span>
+      <span class="audience-pill">Barbershops</span>
+      <span class="audience-pill">Massage</span>
+      <span class="audience-pill">Wellness</span>
+      <span class="audience-pill">Gyms</span>
+      <span class="audience-pill">Boutiques</span>
+      <span class="audience-pill">Florists</span>
+      <span class="audience-pill">Bakeries</span>
+      <span class="audience-pill">Tattoo shops</span>
+      <span class="audience-pill">Anything else, ask</span>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="section-head">
+    <span class="label">How it works</span>
+    <h2>Simple, <span class="editorial-word">no</span> surprises.</h2>
+  </div>
+  <div class="process-grid">
+    <div class="step">
+      <div class="step-num">i</div>
+      <h4>Free consult</h4>
+      <p>20 minutes. Tell me about your business, what you need, what's bugging you. No sales pitch.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">ii</div>
+      <h4>Custom quote</h4>
+      <p>Clear quote, scope, and timeline tailored to your project. No surprise add-ons later.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">iii</div>
+      <h4>Designed &amp; built</h4>
+      <p>You share your vibe and copy (or I help write it). I build, you review, we refine.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">iv</div>
+      <h4>Live &amp; supported</h4>
+      <p>We launch. I'm around for edits, updates, and questions long after launch day.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <div class="pricing-left">
+      <span class="label">Pricing</span>
+      <h2>Fair quotes for <span class="editorial-word">real</span> work.</h2>
+      <p>Every project is different, every quote is custom. Most sites start around $500 and scale based on pages, features, and complexity. Consultation is always free.</p>
+    </div>
+    <div class="pricing-tiers">
+      <div class="tier tier-1">
+        <div class="tier-icon"></div>
+        <div class="tier-content">
+          <strong>Simple landing page</strong>
+          <p>One page. Tells your story, shows your work, gets you found by customers.</p>
+        </div>
+        <div class="tier-price">$500+</div>
+      </div>
+      <div class="tier tier-2">
+        <div class="tier-icon"></div>
+        <div class="tier-content">
+          <strong>Multi-page site</strong>
+          <p>3–6 pages. Menu, gallery, about, contact — the full picture for your shop.</p>
+        </div>
+        <div class="tier-price">$1,200+</div>
+      </div>
+      <div class="tier tier-3">
+        <div class="tier-icon"></div>
+        <div class="tier-content">
+          <strong>With booking or shop built in</strong>
+          <p>Online booking, e-commerce, or custom integrations included.</p>
+        </div>
+        <div class="tier-price">$2,500+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="start">
+  <div class="form-head">
+    <span class="label">Start a project</span>
+    <h2>Tell me what you have <span class="editorial-word">in mind.</span></h2>
+    <p>Share a few details and I'll get back to you with next steps. No commitment, no pressure.</p>
+  </div>
+  <form class="form" action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST">
+    <input type="hidden" name="_subject" value="New project inquiry — builtbyjessica.com">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px;">
+    <input type="hidden" name="project_type" id="project_type" value="Brand new">
+    <div class="form-row">
+      <div class="field">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="business">Business name</label>
+        <input type="text" id="business" name="business" required>
+      </div>
+      <div class="field">
+        <label for="type">Business type</label>
+        <select id="type" name="type">
+          <option>Restaurant or café</option>
+          <option>Yoga or pilates studio</option>
+          <option>Salon or barbershop</option>
+          <option>Massage or wellness</option>
+          <option>Gym or fitness</option>
+          <option>Boutique or shop</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <span class="label-text">Project type</span>
+      <div class="field-radios" role="radiogroup" aria-label="Project type">
+        <button type="button" class="radio-pill active">Brand new</button>
+        <button type="button" class="radio-pill">Redesign</button>
+        <button type="button" class="radio-pill">Expansion</button>
+        <button type="button" class="radio-pill">Not sure yet</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="url">Current website (if any)</label>
+      <input type="url" id="url" name="url" placeholder="https://">
+    </div>
+    <div class="field">
+      <label for="description">Tell me about it</label>
+      <textarea id="description" name="description" placeholder="What are you hoping to build? Any sites you love or hate? Anything goes."></textarea>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label for="timeline">Timeline</label>
+        <select id="timeline" name="timeline">
+          <option>ASAP — I need this soon</option>
+          <option>Within a month</option>
+          <option>1–3 months</option>
+          <option>Just exploring</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="budget">Rough budget (optional)</label>
+        <select id="budget" name="budget">
+          <option>Not sure yet</option>
+          <option>$500 – $1,000</option>
+          <option>$1,000 – $2,500</option>
+          <option>$2,500 – $5,000</option>
+          <option>$5,000+</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-submit">
+      <small>Or skip the form and email me — hi@builtbyjessica.com. Either works.</small>
+      <button type="submit" class="btn btn-primary">Send →</button>
+    </div>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-display">
+      Got a shop? Let's build it something <span class="editorial-word">good.</span>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <span class="label">Contact</span>
+        <a href="mailto:hi@builtbyjessica.com">hi@builtbyjessica.com</a>
+        <a href="#start">Book a consult</a>
+      </div>
+      <div class="footer-col">
+        <span class="label">Site</span>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <span class="label">Office</span>
+        <a href="#">Los Angeles, CA</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Built by Jessica</span>
+      <span>Built in Los Angeles</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.radio-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.querySelectorAll('.radio-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const hidden = document.getElementById('project_type');
+      if (hidden) hidden.value = btn.textContent.trim();
+    });
+  });
+</script>
+
+</body>
+</html>
