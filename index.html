@@ -1296,7 +1296,7 @@
     <h2>Tell me what you have <span class="editorial-word">in mind.</span></h2>
     <p>Share a few details and I'll get back to you with next steps. No commitment, no pressure.</p>
   </div>
-  <form class="form" action="https://formspree.io/f/xlgzonbb" method="POST">
+  <form class="form" action="https://script.google.com/macros/s/AKfycbynP2by9vH3BxpYHZJKrj2kZNPo9HZcFyEdEKee3td4VptTOmzDFl9b9xHY-n8iZKt6pg/exec" method="POST">
     <input type="hidden" name="_subject" value="New project inquiry — built-by-jessica.com">
     <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px;">
     <input type="hidden" name="project_type" id="project_type" value="Brand new">
@@ -1414,8 +1414,10 @@
     });
   });
 
-  // AJAX form submission so we can redirect to our own /thanks.html
-  // (Formspree free tier paywalls _next; submitting via fetch sidesteps that.)
+  // Form submission → Google Apps Script (free, owned, emails me directly).
+  // Uses mode: 'no-cors' to dodge CORS preflight on Apps Script web apps,
+  // matching the yoga-site pattern. With no-cors we can't read the response,
+  // so we redirect to /thanks.html optimistically.
   const contactForm = document.querySelector('form.form');
   if (contactForm) {
     const errorEl = document.getElementById('formError');
@@ -1426,25 +1428,20 @@
       errorEl.classList.remove('show');
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
+
+      const payload = {};
+      new FormData(contactForm).forEach((value, key) => { payload[key] = value; });
+
       try {
-        const response = await fetch(contactForm.action, {
+        await fetch(contactForm.action, {
           method: 'POST',
-          body: new FormData(contactForm),
-          headers: { 'Accept': 'application/json' }
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
         });
-        if (response.ok) {
-          window.location.href = 'https://built-by-jessica.com/thanks.html';
-        } else {
-          const json = await response.json().catch(() => ({}));
-          const msg = (json.errors && json.errors[0] && json.errors[0].message)
-            || 'Something went wrong sending the form. Please try again, or email me directly.';
-          errorEl.textContent = msg;
-          errorEl.classList.add('show');
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalLabel;
-        }
+        window.location.href = 'https://built-by-jessica.com/thanks.html';
       } catch (err) {
-        errorEl.textContent = 'Could not send the form (' + err.message + '). Please email me directly.';
+        errorEl.textContent = 'Could not send the form (' + err.message + '). Please email me directly at built.byjessica1@gmail.com.';
         errorEl.classList.add('show');
         submitBtn.disabled = false;
         submitBtn.textContent = originalLabel;
