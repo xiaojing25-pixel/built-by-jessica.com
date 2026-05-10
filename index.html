@@ -19,7 +19,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@400;500;600&family=Yeseva+One&display=swap" rel="stylesheet">
 <style>
   :root {
     /* WARM BUTTER & PLUM — soft golden cream with deep plum darks and forest accent */
@@ -159,7 +159,7 @@
     font-size: 13.5px; font-weight: 400;
   }
   nav .links a:hover { color: var(--accent); }
-  nav .cta {
+  nav .links a.cta {
     background: var(--accent); color: #FFFFFF;
     padding: 9px 16px;
     border-radius: 100px;
@@ -168,7 +168,7 @@
     transition: all 0.2s;
     text-decoration: none;
   }
-  nav .cta:hover { background: var(--accent-deep); color: #FFFFFF; transform: translateY(-1px); box-shadow: var(--shadow-lift); }
+  nav .links a.cta:hover { background: var(--accent-deep); color: #FFFFFF; transform: translateY(-1px); box-shadow: var(--shadow-lift); }
 
   .hero {
     padding: 130px 24px 56px;
@@ -566,15 +566,13 @@
     color: var(--accent);
     border-radius: 0;
     display: block;
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 76px;
+    font-family: 'Yeseva One', Georgia, serif;
     font-weight: 400;
-    line-height: 0.9;
-    letter-spacing: -0.03em;
+    font-size: 84px;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
     margin-bottom: 22px;
     box-shadow: none;
-    font-variation-settings: "opsz" 144, "SOFT" 30;
   }
   .step h4 {
     font-family: 'Fraunces', serif;
@@ -847,7 +845,7 @@
     .process-grid { grid-template-columns: 1fr; gap: 32px; }
     .process-wave { display: none; }
     .step { padding-top: 24px; border-top: 1px solid var(--line-strong); }
-    .step .step-num { font-size: 56px; margin-bottom: 14px; }
+    .step .step-num { font-size: 64px; margin-bottom: 14px; }
     .pricing { padding: 60px 16px; }
     .faq { padding: 60px 16px 32px; }
     .faq-item { padding: 22px 0; }
@@ -1026,22 +1024,22 @@
   </svg>
   <div class="process-grid">
     <div class="step">
-      <div class="step-num">i</div>
+      <div class="step-num">1</div>
       <h4>Free consult</h4>
       <p>20 minutes. Tell me about your business, what you need, what's bugging you. No sales pitch.</p>
     </div>
     <div class="step">
-      <div class="step-num">ii</div>
+      <div class="step-num">2</div>
       <h4>Custom quote</h4>
       <p>Clear quote, scope, and timeline tailored to your project. No surprise add-ons later.</p>
     </div>
     <div class="step">
-      <div class="step-num">iii</div>
+      <div class="step-num">3</div>
       <h4>Designed &amp; built</h4>
       <p>You share your vibe and copy (or I help write it). I build, you review, we refine.</p>
     </div>
     <div class="step">
-      <div class="step-num">iv</div>
+      <div class="step-num">4</div>
       <h4>Live &amp; supported</h4>
       <p>We launch. I'm around for edits, updates, and questions long after launch day.</p>
     </div>
