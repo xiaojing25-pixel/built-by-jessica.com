@@ -272,11 +272,11 @@
   }
   .collage-card {
     position: absolute;
-    border-radius: 18px;
+    border-radius: 6px;
     overflow: hidden;
     background: var(--paper-light);
     border: 1px solid var(--line);
-    box-shadow: var(--shadow-pop);
+    box-shadow: var(--shadow-pop), inset 0 0 0 14px #FFFFFF;
     transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .collage-1 {
@@ -868,6 +868,7 @@
     nav .links a:not(.cta) { display: none; }
     .hero { padding: 100px 16px 32px; }
     .hero-collage { height: 380px; }
+    .collage-card { box-shadow: var(--shadow-pop), inset 0 0 0 10px #FFFFFF; }
     .hero-accents { margin-top: 26px; gap: 10px; }
     .accent-card { width: 72px; height: 72px; border-radius: 12px; }
     .hero-accents-tag { font-size: 13px; max-width: 110px; }
