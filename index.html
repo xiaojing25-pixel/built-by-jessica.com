@@ -22,10 +22,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@400;500;600&family=Yeseva+One&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* CORAL × MINT — diagonal sweep from warm coral pink into soft sage mint */
-    --paper: #F0B8B0;          /* coral pink fallback */
-    --paper-warm: #E8D0CC;     /* dusty rose, used for pricing section accent */
-    --paper-light: #FAF5F4;    /* soft cool-pink near-white for card surfaces */
+    /* WATERCOLOR STATIONERY — painterly wash from lilac through soft pinks into sage */
+    --paper: #EAD8DD;          /* soft pink mid-tone fallback */
+    --paper-warm: #DCC8D2;     /* deeper mauve, used for pricing section accent */
+    --paper-light: #F8F4F8;    /* cool soft near-white for card surfaces */
     --accent: #2F5236;         /* forest green */
     --accent-deep: #1B3520;
     --accent-soft: #7FA088;
@@ -56,7 +56,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    background: linear-gradient(180deg, #F0B8B0 0%, #E8D2D0 35%, #D6E0D5 70%, #C8DDC8 100%);
+    background: linear-gradient(180deg, #E0DBE8 0%, #EAD8DD 35%, #F0DEE0 50%, #E5DFD8 70%, #D4DECF 100%);
     background-attachment: fixed;
     color: var(--ink);
     font-family: 'Inter Tight', -apple-system, sans-serif;
@@ -141,7 +141,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     padding: 14px 24px;
     display: flex; justify-content: space-between; align-items: center;
-    background: rgba(240, 184, 176, 0.78);
+    background: rgba(224, 219, 232, 0.78);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
   }
