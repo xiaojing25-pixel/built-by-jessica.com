@@ -229,6 +229,7 @@
     font-weight: 500;
     margin-bottom: 22px;
     color: var(--ink);
+    overflow-wrap: break-word;
   }
   .hero h1 .accent-color {
     color: var(--accent);
@@ -945,6 +946,11 @@
     .faq-columns { grid-template-columns: 1fr; gap: 0; }
     .faq-group { margin-bottom: 36px; }
     .footer-cols { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 340px) {
+    .hero h1 { font-size: 28px; }
+    nav .logo { font-size: 18px; }
+    nav .links a.cta { padding: 7px 12px; font-size: 12px; }
   }
   @media (max-width: 600px) {
     nav .links a:not(.cta) { display: none; }
