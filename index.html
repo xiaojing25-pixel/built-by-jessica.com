@@ -880,6 +880,18 @@
   }
   .form-submit small { color: var(--ink-mute); font-size: 12.5px; max-width: 340px; line-height: 1.5; }
   .form-submit .btn-primary { padding: 14px 24px; }
+  .form-error {
+    display: none;
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: rgba(139, 41, 41, 0.08);
+    border: 1px solid rgba(139, 41, 41, 0.22);
+    border-radius: 10px;
+    color: #8B2929;
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .form-error.show { display: block; }
 
   footer {
     background: var(--midnight);
@@ -1286,7 +1298,6 @@
   </div>
   <form class="form" action="https://formspree.io/f/xlgzonbb" method="POST">
     <input type="hidden" name="_subject" value="New project inquiry — built-by-jessica.com">
-    <input type="hidden" name="_next" value="https://built-by-jessica.com/thanks.html">
     <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px;">
     <input type="hidden" name="project_type" id="project_type" value="Brand new">
     <div class="form-row">
@@ -1359,6 +1370,7 @@
       <small>Or skip the form and email me — built.byjessica1@gmail.com. Either works.</small>
       <button type="submit" class="btn btn-primary">Send →</button>
     </div>
+    <div class="form-error" id="formError" role="alert"></div>
   </form>
 </section>
 
@@ -1401,6 +1413,44 @@
       if (hidden) hidden.value = btn.textContent.trim();
     });
   });
+
+  // AJAX form submission so we can redirect to our own /thanks.html
+  // (Formspree free tier paywalls _next; submitting via fetch sidesteps that.)
+  const contactForm = document.querySelector('form.form');
+  if (contactForm) {
+    const errorEl = document.getElementById('formError');
+    const submitBtn = contactForm.querySelector('button[type=submit]');
+    const originalLabel = submitBtn.textContent;
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorEl.classList.remove('show');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          window.location.href = 'https://built-by-jessica.com/thanks.html';
+        } else {
+          const json = await response.json().catch(() => ({}));
+          const msg = (json.errors && json.errors[0] && json.errors[0].message)
+            || 'Something went wrong sending the form. Please try again, or email me directly.';
+          errorEl.textContent = msg;
+          errorEl.classList.add('show');
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+        }
+      } catch (err) {
+        errorEl.textContent = 'Could not send the form (' + err.message + '). Please email me directly.';
+        errorEl.classList.add('show');
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }
+    });
+  }
 </script>
 
 </body>
