@@ -1438,14 +1438,25 @@
     if (/Safari/i.test(ua) && !/Chrome/i.test(ua)) return 'Safari';
     return 'Other';
   }
+  function detectOS() {
+    const ua = navigator.userAgent;
+    if (/iPhone|iPad|iPod/i.test(ua)) return 'iOS';
+    if (/Android/i.test(ua)) return 'Android';
+    if (/Windows NT/i.test(ua)) return 'Windows';
+    if (/Mac OS X|Macintosh/i.test(ua)) return 'macOS';
+    if (/CrOS/i.test(ua)) return 'ChromeOS';
+    if (/Linux/i.test(ua)) return 'Linux';
+    return 'Other';
+  }
 
-  let geoData = { city: '', state: '', country: '' };
+  let geoData = { city: '', state: '', country: '', zip: '' };
   fetch('https://ipapi.co/json/')
     .then(r => r.json())
     .then(d => {
       geoData.city = d.city || '';
       geoData.state = d.region || '';
       geoData.country = d.country_name || '';
+      geoData.zip = d.postal || '';
     })
     .catch(() => {}); // silently fail — geolocation is optional
 
@@ -1470,8 +1481,10 @@
       // Append tracking metadata
       payload._device = detectDevice();
       payload._browser = detectBrowser();
+      payload._os = detectOS();
       payload._city = geoData.city;
       payload._state = geoData.state;
+      payload._zip = geoData.zip;
       payload._country = geoData.country;
       payload._referrer = document.referrer || 'direct';
       payload._screen = window.screen.width + 'x' + window.screen.height;
