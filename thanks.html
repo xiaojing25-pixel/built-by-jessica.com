@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank you — Built by Jessica</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter+Tight:wght@400;500&family=Yeseva+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #2F5236;
+    --accent-deep: #1B3520;
+    --midnight: #2D1F2E;
+    --ink: #1F1A1F;
+    --ink-soft: #3D3540;
+    --ink-mute: #857A82;
+    --line: rgba(31, 26, 31, 0.10);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: linear-gradient(180deg, #E0DBE8 0%, #EAD8DD 35%, #F0DEE0 50%, #E5DFD8 70%, #D4DECF 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--ink);
+    font-family: 'Inter Tight', -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+  }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(224, 219, 232, 0.78);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .logo {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'Fraunces', serif;
+    font-size: 22px; font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  nav .logo svg { color: var(--accent); }
+
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+    text-align: center;
+  }
+  .thanks { max-width: 600px; }
+  .thanks .label {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: inline-block;
+    margin-bottom: 24px;
+  }
+  .thanks h1 {
+    font-family: 'Yeseva One', Georgia, serif;
+    font-size: clamp(56px, 7vw, 92px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    font-weight: 400;
+  }
+  .thanks p {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 36px;
+    font-variation-settings: "opsz" 144;
+  }
+  .thanks p strong { color: var(--ink); font-weight: 500; }
+  .thanks-back {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 22px;
+    background: var(--ink);
+    color: white;
+    border-radius: 100px;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow:
+      0 1px 2px rgba(31, 26, 31, 0.05),
+      0 2px 6px rgba(31, 26, 31, 0.06),
+      0 8px 24px rgba(31, 26, 31, 0.06);
+  }
+  .thanks-back:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+  }
+  @media (max-width: 600px) {
+    .thanks p { font-size: 16px; }
+    main { padding: 100px 16px 48px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M2 14 Q 5 8, 8 12 T 14 10 T 18 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+    Built by Jessica
+  </a>
+</nav>
+
+<main>
+  <div class="thanks">
+    <span class="label">Got it</span>
+    <h1>Thank you.</h1>
+    <p>Your message just landed in my inbox. I'll read it carefully and reply within a day or two — keep an eye out for a note from <strong>built.byjessica1@gmail.com</strong>. Sometimes the first one lands in spam, so peek there if you don't see anything.</p>
+    <a href="/" class="thanks-back">← Back to the homepage</a>
+  </div>
+</main>
+
+</body>
+</html>
