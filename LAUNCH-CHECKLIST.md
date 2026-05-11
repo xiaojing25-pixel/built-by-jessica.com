@@ -92,5 +92,5 @@ Reviews on Google Business Profile compound: more reviews → higher local pack 
 
 - **GA4 dashboard**: https://analytics.google.com (Measurement ID: `G-B0Y84X6RG4`)
 - **GitHub repo**: https://github.com/xiaojing25-pixel/built-by-jessica.com
-- **Form submissions go to**: built.byjessica1@gmail.com
+- **Form submissions go to**: info@built-by-jessica.com
 - **Apps Script form handler**: https://script.google.com (project: "Built by Jessica form handler")
