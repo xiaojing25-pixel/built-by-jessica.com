@@ -102,6 +102,7 @@
     overflow-x: hidden;
   }
   ::selection { background: var(--accent); color: white; }
+  a, button { cursor: default; }
 
   body::before {
     content: '';
@@ -163,6 +164,7 @@
     background-size: 80px 80px;
   }
 
+
   /* Display font — Fraunces with subtle character */
   .display {
     font-family: 'Fraunces', Georgia, serif;
@@ -208,7 +210,7 @@
   nav .links a.cta:hover { background: var(--accent-deep); color: #FFFFFF; transform: translateY(-1px); box-shadow: var(--shadow-lift); }
 
   .hero {
-    padding: 130px 24px 56px;
+    padding: 130px 24px 28px;
     max-width: 1280px;
     margin: 0 auto;
     position: relative;
@@ -263,7 +265,7 @@
     text-decoration: none;
     transition: all 0.2s;
     border: none;
-    cursor: pointer;
+    cursor: default;
     font-family: 'Inter Tight', sans-serif;
     box-shadow: var(--shadow-soft);
   }
@@ -327,18 +329,18 @@
       0 72px 120px rgba(31, 26, 31, 0.14);
   }
   .collage-1 {
-    width: 70%; height: 56%;
-    top: 0; right: 0;
-    transform: rotate(2.5deg);
+    width: 72%; height: 58%;
+    top: 0; right: -5%;
+    transform: rotate(4deg);
     z-index: 3;
-    background-image: url('assets/hero-collage-1.jpg');
+    background-image: url('assets/hero-collage-3.jpg');
     background-size: cover;
     background-position: center;
   }
-  .collage-1:hover { transform: rotate(2.5deg) translateY(-4px) scale(1.02); }
+  .collage-1:hover { transform: rotate(4deg) translateY(-4px) scale(1.02); }
   .collage-2 {
-    width: 60%; height: 48%;
-    bottom: 18%; left: -10%;
+    width: 70%; height: 56%;
+    bottom: 6%; left: -10%;
     transform: rotate(-3deg);
     z-index: 4;
     background-image: url('assets/hero-collage-2.jpg');
@@ -347,11 +349,11 @@
   }
   .collage-2:hover { transform: rotate(-3deg) translateY(-4px) scale(1.02); }
   .collage-3 {
-    width: 42%; height: 36%;
+    width: 50%; height: 42%;
     top: 4%; left: 0;
     transform: rotate(-2deg);
     z-index: 2;
-    background-image: url('assets/hero-collage-3.jpg');
+    background-image: url('assets/hero-collage-1.jpg');
     background-size: cover;
     background-position: center;
   }
@@ -377,11 +379,11 @@
   .sticker.midnight { background: var(--midnight); color: white; border-color: var(--midnight-deep); }
   .sticker-1 { top: -10px; right: 20%; transform: rotate(-6deg); }
   .sticker-2 { top: 38%; right: -14px; transform: rotate(4deg); z-index: 6; }
-  .sticker-3 { top: 50%; right: 4%; transform: rotate(-3deg); z-index: 6; }
+  .sticker-3 { top: auto; right: 32%; bottom: 4%; transform: rotate(-3deg); z-index: 6; }
 
   .stat-strip {
     max-width: 1280px;
-    margin: 64px auto 0;
+    margin: 32px auto 0;
     padding: 0 24px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -587,7 +589,7 @@
     font-size: 16px;
     font-weight: 400;
     transition: all 0.2s;
-    cursor: pointer;
+    cursor: default;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     color: white;
     font-variation-settings: "opsz" 14, "SOFT" 30;
@@ -798,10 +800,16 @@
 
   .form-section {
     padding: 100px 24px 80px;
-    max-width: 920px;
+    max-width: 1280px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
+  }
+  .form-section .form-head,
+  .form-section .form {
+    max-width: 872px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .form-head { text-align: center; margin-bottom: 40px; }
   .form-head .label { color: var(--accent); display: inline-block; margin-bottom: 16px; }
@@ -864,7 +872,7 @@
     border: 1px solid var(--line);
     border-radius: 100px;
     font-size: 13.5px;
-    cursor: pointer;
+    cursor: default;
     transition: all 0.2s;
     color: var(--ink);
     font-family: 'Inter Tight', sans-serif;
@@ -954,9 +962,20 @@
   }
   @media (max-width: 600px) {
     nav .links a:not(.cta) { display: none; }
-    .hero { padding: 100px 16px 32px; }
+    .hero { padding: 100px 16px 0; }
     .hero-collage { height: 380px; }
     .collage-card { border-width: 10px; }
+    .collage-1 { width: 60%; height: 48%; right: 0; }
+    .collage-2 { width: 60%; height: 48%; left: 18%; bottom: 18%; }
+    .collage-3 { width: 60%; height: 48%; }
+    .sticker-3 {
+      top: auto;
+      right: auto;
+      bottom: 14%;
+      left: 6%;
+      transform: rotate(-3deg);
+    }
+    .stat-strip { margin-top: 16px; }
     .hero-accents { margin-top: 26px; gap: 10px; }
     .accent-card { width: 72px; height: 72px; border-radius: 12px; }
     .hero-accents-tag { font-size: 13px; max-width: 110px; }
@@ -1237,8 +1256,27 @@
             <h4 class="faq-q">How does payment work?</h4>
             <p class="faq-a">Typically a 50% deposit to start and the rest before launch. Larger projects can be split into thirds. Payment via Zelle, Venmo, or bank transfer — your call.</p>
           </div>
+          <div class="faq-item">
+            <h4 class="faq-q">Will my site work on mobile phones?</h4>
+            <p class="faq-a">Yes — every site I build is fully responsive and looks great on phones right out of the box. Mobile support is standard, not an add-on. The one exception: if you want a mobile experience that's drastically different from the desktop version (a separate layout, unique navigation, different content), that's a bigger design and build effort that may affect the quote. Most small-business sites don't need that — a well-done responsive design covers everything.</p>
+          </div>
         </div>
       </div>
+      <div class="faq-group">
+        <h3 class="faq-group-title">Beyond websites</h3>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h4 class="faq-q">Can you come take photos for our shop?</h4>
+            <p class="faq-a">Absolutely. On-site photography is an add-on, priced based on travel distance and the kind of shoot we need. I'll quote it separately during the consult so there are no surprises.</p>
+          </div>
+          <div class="faq-item">
+            <h4 class="faq-q">Do you build personal sites or portfolios too?</h4>
+            <p class="faq-a">Yes. The same care and craft applies — writers, photographers, freelancers, anyone who needs a place online that feels like them and not a template.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="faq-col">
       <div class="faq-group">
         <h3 class="faq-group-title">After launch</h3>
         <div class="faq-list">
@@ -1252,8 +1290,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="faq-col">
       <div class="faq-group">
         <h3 class="faq-group-title">About the build</h3>
         <div class="faq-list">
@@ -1272,19 +1308,6 @@
           <div class="faq-item">
             <h4 class="faq-q">Will my site show up on Google?</h4>
             <p class="faq-a">I build with proper SEO basics — meta tags, structured data, fast load times — so search engines can index your site easily. Ranking depends on your business, your location, and competition; I can't promise the #1 spot, but the technical foundation will be there.</p>
-          </div>
-        </div>
-      </div>
-      <div class="faq-group">
-        <h3 class="faq-group-title">Beyond websites</h3>
-        <div class="faq-list">
-          <div class="faq-item">
-            <h4 class="faq-q">Can you come take photos for our shop?</h4>
-            <p class="faq-a">Absolutely. On-site photography is an add-on, priced based on travel distance and the kind of shoot we need. I'll quote it separately during the consult so there are no surprises.</p>
-          </div>
-          <div class="faq-item">
-            <h4 class="faq-q">Do you build personal sites or portfolios too?</h4>
-            <p class="faq-a">Yes. The same care and craft applies — writers, photographers, freelancers, anyone who needs a place online that feels like them and not a template.</p>
           </div>
           <div class="faq-item">
             <h4 class="faq-q">Can you handle automation — order processing, inventory, internal tools?</h4>
