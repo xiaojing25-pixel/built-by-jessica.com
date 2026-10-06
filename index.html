@@ -958,6 +958,12 @@
     .faq-columns { grid-template-columns: 1fr; gap: 0; }
     .faq-group { margin-bottom: 36px; }
     .footer-cols { grid-template-columns: 1fr 1fr; }
+    nav .links { gap: 16px; }
+    nav .logo, nav .links a { white-space: nowrap; }
+  }
+  @media (max-width: 780px) {
+    /* tablet: drop the in-page anchors so the nav fits one line; About, Other Services + CTA stay */
+    nav .links a[href^="#"]:not(.cta) { display: none; }
   }
   @media (max-width: 340px) {
     .hero h1 { font-size: 28px; }
@@ -1024,10 +1030,12 @@
     Built by Jessica
   </div>
   <div class="links">
+    <a href="/about">About</a>
     <a href="#work">Work</a>
     <a href="#process">Process</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">Questions</a>
+    <a href="/services/">Other Services</a>
     <a href="#start" class="cta">Start a project</a>
   </div>
 </nav>
@@ -1420,6 +1428,7 @@
       </div>
       <div class="footer-col">
         <span class="label">Site</span>
+        <a href="/about">About</a>
         <a href="#work">Work</a>
         <a href="#process">Process</a>
         <a href="#pricing">Pricing</a>
