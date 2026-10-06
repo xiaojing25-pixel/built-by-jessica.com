@@ -1,3 +1,10 @@
 .DS_Store
 .vscode/
 node_modules/
+
+# Private working files — keep out of the public repo/site
+.claude/
+GBP-DESCRIPTION.pdf
+LAUNCH-CHECKLIST.pdf
+built-by-jessica-marketing-playbook.pdf
+assets/google storefront image.png
