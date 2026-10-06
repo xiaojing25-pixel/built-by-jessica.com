@@ -92,7 +92,6 @@ a:hover { color: var(--accent-deep); }
 .site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px; padding-top: 14px; padding-bottom: 14px; }
 .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--ink); font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; letter-spacing: -0.01em; font-variation-settings: "opsz" 144, "SOFT" 30; }
 .logo:hover { color: var(--ink); }
-.logo svg { color: var(--accent); }
 .nav { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; }
 .nav a { color: var(--ink); text-decoration: none; font-size: 13.5px; padding: 10px 0; }
 .nav a:hover, .nav a.active { color: var(--accent); }

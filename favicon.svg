@@ -1,4 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Small-size mug, pixel-snapped for 16px and 32px: 2-unit strokes on odd coordinates, fills on even ones -->
   <rect width="32" height="32" rx="6" fill="#F4ECD8"/>
-  <path d="M4 22 Q 9 12, 14 18 T 22 16 T 28 10" stroke="#2F5236" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M5 11 H23 V23 A4 4 0 0 1 19 27 H9 A4 4 0 0 1 5 23 Z" fill="none" stroke="#14393F" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M23 13 H25 A4 4 0 0 1 25 21 H23" fill="none" stroke="#14393F" stroke-width="2"/>
+  <rect x="8" y="20" width="4" height="4" rx="0.5" fill="#8DB1A6"/>
+  <rect x="16" y="20" width="4" height="4" rx="0.5" fill="#14393F"/>
+  <rect x="12" y="14" width="4" height="4" rx="0.5" fill="#8DB1A6"/>
+  <path d="M15 10 C13 8.5 17 7.5 15 6 C14 5 16 4 18 4" fill="none" stroke="#8DB1A6" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="18" y="2" width="4" height="4" rx="0.5" fill="#C9A24A"/>
 </svg>
